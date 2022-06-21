@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import '~/App.css';
+import Sidebar from './components/Sidebar';
+import MoteBtn from './components/MoteBtn';
+import classNames from 'classnames';
+import { Outlet } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const mode = useSelector((state) => state.mote.value);
+
+    return (
+        <div className={classNames('App bg-dark min-h-screen', { 'bg-white': mode === 'light' })}>
+            <MoteBtn />
+            <Sidebar />
+            <div className="px-[30px] phone:px-[14px] phone:py-16">
+                <Outlet />
+            </div>
+        </div>
+    );
 }
 
 export default App;
