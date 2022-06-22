@@ -14,8 +14,8 @@ function Contact() {
     return (
         <div>
             <Heading title="get in" mainTitle="Touch" hiddenTitle="Contact" />
-            <div className="flex max-w-6xl m-auto">
-                <div className="w-1/3 text-left">
+            <div className="flex max-w-6xl m-auto phone:flex-col">
+                <div className="w-1/3 text-left phone:w-full">
                     <h3
                         className={classNames('text-[26px] mb-4 uppercase font-extrabold text-white', {
                             'text-lightText': mode === 'light',
@@ -84,7 +84,7 @@ function Contact() {
                         </div>
                     </div>
                 </div>
-                <div className="w-2/3 text-left px-[30px]">
+                <div className="w-2/3 text-left px-[30px] phone:w-full phone:px-0">
                     <Formik
                         initialValues={{ email: '', name: '', subject: '', message: '' }}
                         validate={(values) => {
@@ -114,7 +114,7 @@ function Contact() {
                                 .sendForm('service_yrut6mr', 'template_fwxuktb', form.current, 'I5lvMmUtb6nctDtOl')
                                 .then(
                                     (result) => {
-                                        console.log('Ok');
+                                        alert('Send message is successful!');
                                     },
                                     (error) => {
                                         console.log(error.text);
@@ -133,8 +133,8 @@ function Contact() {
                             /* and other goodies */
                         }) => (
                             <form ref={form} onSubmit={handleSubmit}>
-                                <div className="flex mb-5">
-                                    <div className="w-1/2 pr-2">
+                                <div className="flex mb-5 phone:flex-col">
+                                    <div className="w-1/2 pr-2 phone:w-full phone:p-0 phone:mb-5">
                                         <input
                                             className={classNames(
                                                 'w-full text-[15px] text-white outline-0 px-8 py-4 bg-toggle rounded-full border-[1px] border-toggle focus:border-main',
@@ -154,7 +154,7 @@ function Contact() {
                                             {errors.name && touched.name && errors.name}
                                         </p>
                                     </div>
-                                    <div className="w-1/2 pl-2">
+                                    <div className="w-1/2 pl-2 phone:w-full phone:p-0">
                                         <input
                                             className={classNames(
                                                 'w-full text-[15px] text-white outline-0 px-8 py-4 bg-toggle rounded-full border-[1px] border-toggle focus:border-main',
@@ -242,7 +242,7 @@ function Contact() {
                                     </div>
                                     <p
                                         className={classNames(
-                                            'z-50 text-white uppercase font-semibold text-[15px] pl-[64px] pr-8 group-hover:pr-[64px] group-hover:pl-8 ease-[ease] duration-300 transition-all',
+                                            'z-40 text-white uppercase font-semibold text-[15px] pl-[64px] pr-8 group-hover:pr-[64px] group-hover:pl-8 ease-[ease] duration-300 transition-all',
                                             {
                                                 'text-lightText': mode === 'light',
                                                 'group-hover:text-white': mode === 'light',

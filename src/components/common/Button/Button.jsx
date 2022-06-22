@@ -33,7 +33,7 @@ function Button(props) {
             </div>
             <p
                 className={classNames(
-                    'z-50 phone:z-10 text-white uppercase font-semibold text-[15px] pl-[64px] pr-8 group-hover:pr-[64px] group-hover:pl-8 ease-[ease] duration-300 transition-all ',
+                    'z-40 phone:z-10 text-white uppercase font-semibold text-[15px] pl-[64px] pr-8 group-hover:pr-[64px] group-hover:pl-8 ease-[ease] duration-300 transition-all ',
                     { 'text-lightText': mode === 'light', 'group-hover:text-white': mode === 'light' },
                 )}
             >
